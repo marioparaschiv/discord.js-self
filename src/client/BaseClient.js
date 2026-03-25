@@ -24,6 +24,11 @@ class BaseClient extends EventEmitter {
      */
     this.options = Util.mergeDefault(Options.createDefault(), options);
 
+    // If the consumer provided ws.properties, use it as-is (don't merge with defaults)
+    if (options?.ws?.properties) {
+      this.options.ws.properties = options.ws.properties;
+    }
+
     /**
      * The REST manager of the client
      * @type {RESTManager}
