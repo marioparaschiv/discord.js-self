@@ -8114,15 +8114,10 @@ export interface WebSocketOptions {
 }
 
 export interface WebSocketProperties {
+  [key: string]: unknown;
   os?: string;
   browser?: string;
   device?: string;
-  /** @deprecated Use {@link os} instead. */
-  $os?: string;
-  /** @deprecated Use {@link browser} instead. */
-  $browser?: string;
-  /** @deprecated Use {@link device} instead. */
-  $device?: string;
 }
 
 export interface WidgetActivity {
