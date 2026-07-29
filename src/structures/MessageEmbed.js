@@ -114,6 +114,8 @@ class MessageEmbed {
      * @property {string} proxyURL ProxyURL for this thumbnail
      * @property {number} height Height of this thumbnail
      * @property {number} width Width of this thumbnail
+     * @property {?string} placeholder Base64 ThumbHash placeholder for this thumbnail
+     * @property {?number} placeholderVersion Version of the placeholder for this thumbnail
      */
 
     /**
@@ -126,6 +128,8 @@ class MessageEmbed {
           proxyURL: data.thumbnail.proxyURL ?? data.thumbnail.proxy_url,
           height: data.thumbnail.height,
           width: data.thumbnail.width,
+          placeholder: data.thumbnail.placeholder ?? null,
+          placeholderVersion: data.thumbnail.placeholderVersion ?? data.thumbnail.placeholder_version ?? null,
         }
       : null;
 
@@ -136,6 +140,8 @@ class MessageEmbed {
      * @property {string} proxyURL ProxyURL for this image
      * @property {number} height Height of this image
      * @property {number} width Width of this image
+     * @property {?string} placeholder Base64 ThumbHash placeholder for this image
+     * @property {?number} placeholderVersion Version of the placeholder for this image
      */
 
     /**
@@ -148,6 +154,8 @@ class MessageEmbed {
           proxyURL: data.image.proxyURL ?? data.image.proxy_url,
           height: data.image.height,
           width: data.image.width,
+          placeholder: data.image.placeholder ?? null,
+          placeholderVersion: data.image.placeholderVersion ?? data.image.placeholder_version ?? null,
         }
       : null;
 
@@ -158,6 +166,8 @@ class MessageEmbed {
      * @property {string} proxyURL ProxyURL for this video
      * @property {number} height Height of this video
      * @property {number} width Width of this video
+     * @property {?string} placeholder Base64 ThumbHash placeholder for this video
+     * @property {?number} placeholderVersion Version of the placeholder for this video
      */
 
     /**
@@ -171,6 +181,8 @@ class MessageEmbed {
           proxyURL: data.video.proxyURL ?? data.video.proxy_url,
           height: data.video.height,
           width: data.video.width,
+          placeholder: data.video.placeholder ?? null,
+          placeholderVersion: data.video.placeholderVersion ?? data.video.placeholder_version ?? null,
         }
       : null;
 
@@ -540,6 +552,8 @@ class MessageEmbed {
         proxyURL: this.video.proxyURL,
         height: this.video.height,
         width: this.video.width,
+        placeholder: this.video.placeholder,
+        placeholderVersion: this.video.placeholderVersion,
       },
       provider: this.provider && {
         name: this.provider.name,

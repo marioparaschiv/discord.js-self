@@ -123,6 +123,18 @@ class MessageAttachment {
       this.width ??= null;
     }
 
+    /**
+     * The base64 ThumbHash placeholder of this attachment (if an image or video)
+     * @type {?string}
+     */
+    this.placeholder = data.placeholder ?? null;
+
+    /**
+     * The version of the placeholder of this attachment
+     * @type {?number}
+     */
+    this.placeholderVersion = data.placeholderVersion ?? data.placeholder_version ?? null;
+
     if ('content_type' in data) {
       /**
        * The media (MIME) type of this attachment

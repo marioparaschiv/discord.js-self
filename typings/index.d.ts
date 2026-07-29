@@ -2355,6 +2355,8 @@ export class MessageAttachment {
   public height: number | null;
   public id: Snowflake;
   public name: string | null;
+  public placeholder: string | null;
+  public placeholderVersion: number | null;
   public proxyURL: string;
   public size: number;
   public readonly spoiler: boolean;
@@ -7377,6 +7379,8 @@ export interface MessageEmbedImage {
   proxyURL?: string;
   height?: number;
   width?: number;
+  placeholder?: string | null;
+  placeholderVersion?: number | null;
 }
 
 export interface MessageEmbedOptions {
@@ -7403,6 +7407,8 @@ export interface MessageEmbedThumbnail {
   proxyURL?: string;
   height?: number;
   width?: number;
+  placeholder?: string | null;
+  placeholderVersion?: number | null;
 }
 
 export interface MessageEmbedVideo {
@@ -7410,6 +7416,8 @@ export interface MessageEmbedVideo {
   proxyURL?: string;
   height?: number;
   width?: number;
+  placeholder?: string | null;
+  placeholderVersion?: number | null;
 }
 
 export interface MessageEvent {
